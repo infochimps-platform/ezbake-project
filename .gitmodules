@@ -1,0 +1,48 @@
+[submodule "ezbake-batch"]
+	path = ezbake-batch
+	url = https://github.com/infochimps-forks/ezbake-batch.git
+[submodule "ezbake-common-cpp"]
+	path = ezbake-common-cpp
+	url = https://github.com/infochimps-forks/ezbake-common-cpp.git
+[submodule "ezbake-common-java"]
+	path = ezbake-common-java
+	url = https://github.com/infochimps-forks/ezbake-common-java.git
+[submodule "ezbake-common-nodejs"]
+	path = ezbake-common-nodejs
+	url = https://github.com/infochimps-forks/ezbake-common-nodejs.git
+[submodule "ezbake-common-python"]
+	path = ezbake-common-python
+	url = https://github.com/infochimps-forks/ezbake-common-python.git
+[submodule "ezbake-data-access"]
+	path = ezbake-data-access
+	url = https://github.com/infochimps-forks/ezbake-data-access.git
+[submodule "ezbake-dev-tools"]
+	path = ezbake-dev-tools
+	url = https://github.com/infochimps-forks/ezbake-dev-tools.git
+[submodule "ezbake-frack"]
+	path = ezbake-frack
+	url = https://github.com/infochimps-forks/ezbake-frack.git
+[submodule "ezbake-parent"]
+	path = ezbake-parent
+	url = https://github.com/infochimps-forks/ezbake-parent.git
+[submodule "ezbake-platform-misc"]
+	path = ezbake-platform-misc
+	url = https://github.com/infochimps-forks/ezbake-platform-misc.git
+[submodule "ezbake-platform-services"]
+	path = ezbake-platform-services
+	url = https://github.com/infochimps-forks/ezbake-platform-services.git
+[submodule "ezbake-thrift"]
+	path = ezbake-thrift
+	url = https://github.com/infochimps-forks/ezbake-thrift.git
+[submodule "ezbake-training"]
+	path = ezbake-training
+	url = https://github.com/infochimps-forks/ezbake-training.git
+[submodule "titan"]
+	path = titan
+	url = https://github.com/infochimps-forks/titan.git
+[submodule "embedded-redis"]
+	path = embedded-redis
+	url = https://github.com/kstyrc/embedded-redis.git
+[submodule "ezbake-platform-ui"]
+	path = ezbake-platform-ui
+	url = https://github.com/infochimps-forks/ezbake-platform-ui.git
