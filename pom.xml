@@ -15,7 +15,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ezbake-parent</artifactId>
+    <artifactId>ezbake-project</artifactId>
     <groupId>ezbake</groupId>
     <version>2.1</version>
     <packaging>pom</packaging>
@@ -23,197 +23,30 @@
     <modules>
         <module>embedded-redis</module>
 
-	<!-- 
+	<!--
 
-             fails to find com._42six.amino.core:amino-api:jar:2.3.0 . 
-             IIRC, this is a secret module that 42six is not able to share 
+             fails to find com._42six.amino.core:amino-api:jar:2.3.0 .
+             IIRC, this is a secret module that 42six is not able to share
 	     with us, so we'll have to do without the batch stuff.
 
 	-->
         <!-- <module>ezbake-batch</module> -->
 
-        <module>ezbake-common-cpp</module>
+        <module>ezbake-parent</module>
+        <module>ezbake-thrift</module>
         <module>ezbake-common-java</module>
-        <module>ezbake-common-nodejs</module>
-        <module>ezbake-common-python</module>
+        <module>ezbake-common-cpp</module>
         <module>ezbake-data-access</module>
         <module>ezbake-dev-tools</module>
-        <module>ezbake-frack</module>
-        <module>ezbake-platform-misc</module>
         <module>ezbake-platform-services</module>
-        <module>ezbake-platform-ui</module>
-        <module>ezbake-thrift</module>
-        <module>ezbake-training</module>
+        <module>ezbake-platform-misc</module>
+        <module>ezbake-batch</module>
+        <module>ezbake-frack</module>
         <module>titan</module>
+        <module>ezbake-training</module>
+        <module>ezbake-common-python</module>
+        <module>ezbake-platform-ui</module>
+        <module>ezbake-common-nodejs</module>
     </modules>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <slf4j.version>1.7.6</slf4j.version>
-
-        <!--
-        Note: The following 2 properties are required to be set (in a user profile or
-        on the command line) before running the deploy goal:
-        <release.repository>[url of release repository]</release.repository>
-        <snapshot.repository>[url of snapshot repository]</snapshot.repository>
-        -->
-    </properties>
-
-    <distributionManagement>
-        <repository>
-            <id>repo</id>
-            <name>Central Repository For Maven Artifacts</name>
-            <url>${release.repository}</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>snapshots</name>
-            <url>${snapshot.repository}</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.apache.thrift</groupId>
-                <artifactId>libthrift</artifactId>
-                <version>0.9.1</version>
-		<exclusions>
-		  <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-		  </exclusion>
-		</exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpclient</artifactId>
-                <version>4.3.3</version>
-		<exclusions>
-		  <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-		  </exclusion>
-		</exclusions>
-            </dependency>
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>17.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>3.3.2</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>2.4</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>log4j-over-slf4j</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>jcl-over-slf4j</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.accumulo</groupId>
-                <artifactId>accumulo-core</artifactId>
-                <version>1.6.0-cdh4.6.0</version>
-		<exclusions>
-		  <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>log4j</artifactId>
-		  </exclusion>
-		  <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-		  </exclusion>
-		</exclusions>
-            </dependency>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.12</version>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.18.1</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.rat</groupId>
-                    <artifactId>apache-rat-plugin</artifactId>
-                    <version>0.11</version>
-                    <executions>
-                        <execution>
-                            <id>verify-ezbake-license</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <ignoreErrors>false</ignoreErrors>
-                        <excludes>
-                            <exclude>**/README*</exclude>
-                            <exclude>**/*.priv</exclude>
-                            <exclude>**/*.pub</exclude>
-                            <exclude>**/*.crt</exclude>
-                            <exclude>**/*.p12</exclude>
-                            <exclude>**/*.jks</exclude>
-                            <exclude>**/.git*</exclude>
-                            <exclude>**/*.xml</exclude>
-                            <exclude>**/*.json</exclude>
-                            <exclude>**/*.txt</exclude>
-                            <exclude>**/*.template</exclude>
-                            <exclude>**/*.lock</exclude>
-                            <exclude>**/*.log</exclude>
-                            <exclude>**/*.yml</exclude>
-                        </excludes>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-        <plugins> 
-	    <plugin> 
-	        <groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-compiler-plugin</artifactId>
-		<version>3.2</version> 
-		<configuration> 
-		    <source>1.7</source>
-		    <target>1.7</target> 
-		</configuration> 
-            </plugin> 
-	    <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.1</version> 
-            </plugin> 
-        </plugins> 
-    </build>
 </project>

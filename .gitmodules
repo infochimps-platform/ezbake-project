@@ -24,7 +24,7 @@
 	url = https://github.com/infochimps-forks/ezbake-frack.git
 [submodule "ezbake-parent"]
 	path = ezbake-parent
-	url = https://github.com/infochimps-forks/ezbake-parent.git
+	url = git@github.com:infochimps-forks/ezbake-parent.git
 [submodule "ezbake-platform-misc"]
 	path = ezbake-platform-misc
 	url = https://github.com/infochimps-forks/ezbake-platform-misc.git
