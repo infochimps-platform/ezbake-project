@@ -46,3 +46,6 @@
 [submodule "ezbake-platform-ui"]
 	path = ezbake-platform-ui
 	url = https://github.com/infochimps-forks/ezbake-platform-ui.git
+[submodule "ezbake-client-ca"]
+	path = ezbake-client-ca
+	url = git@github.com:infochimps-platform/ezbake-client-ca.git
