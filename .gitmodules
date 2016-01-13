@@ -49,3 +49,6 @@
 [submodule "ezbake-client-ca"]
 	path = ezbake-client-ca
 	url = git@github.com:infochimps-platform/ezbake-client-ca.git
+[submodule "thrift_client"]
+	path = thrift_client
+	url = git@github.com:infochimps-platform/thrift_client.git
